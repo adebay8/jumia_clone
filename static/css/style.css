@@ -1,3 +1,8 @@
+body{
+    font-family: 'Poppins', sans-serif;
+}
+
+
 .card {
     height: 400px; /* Your height here */
     overflow: hidden;
@@ -7,3 +12,117 @@
     height: 250px; /* Your height here */
     overflow: hidden;
 }
+
+
+.navbar .nav-link{
+    font-size: 14px;
+    text-transform: uppercase;
+    padding-left: 16px!important;
+    padding-right: 16px!important;
+}
+
+.navbar-toggler{
+    outline: none!important;
+}
+
+.bg-black{
+    background-color: black;
+}
+
+.ponne-buttin{
+    color: black;
+    background-color: white;
+    border:none;
+    font-size: 1.5rem;
+}
+
+.ponne-buttin:hover{
+    color: white;
+    background-color: black;
+}
+/* Carousel slider */
+.carousel-item{
+    height: 600px;
+}
+
+.carousel-image-1{
+    background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.4)), url('images/image-1.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+.carousel-image-2{
+    background-image: linear-gradient(rgba(0,0,0,.3), rgba(0,0,0,.4)), url('images/image-2.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+.carousel-image-3{
+    background-image: linear-gradient(rgba(0,0,0,.3), rgba(0,0,0,.4)), url('images/image-3.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+.title-color{
+    color: white;
+}
+
+.btn-color{
+    background: black;
+    color: white;
+}
+
+.btn-color:hover{
+    color: black;
+    background: white;
+}
+
+@keyframes slide-btn{
+    16%{
+        transform: translateY(8px);
+    }
+    33%{
+        transform: translateY(-6px);
+    }
+    50%{
+        transform: translateY(4px);
+    }
+    65%{
+        transform: translateY(-2px);
+    }
+    85%{
+        transform: translateY(1px);
+    }
+    100%{
+        transform: translateY(0);
+    }
+}
+
+.slide-btn{
+    display: inline-block;
+    vertical-align: middle;
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0,0,0,0);
+}
+
+.slide-btn:hover, 
+.slide-btn:focus, 
+.slide-btn:active{
+    animation-name: slide-btn;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: 1;
+}
+
+/* Service section */
+.service-icon{
+    display: inline-block;
+    font-size: 32px;
+    margin-bottom:16px ;
+    color: black;
+    padding: 8px 16px;
+}
+/* Service section */
