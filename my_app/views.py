@@ -27,8 +27,9 @@ def new_search(request):
         post_title = post.find('a', {'class',"core"}).find('div', {'class':'info'}).find('h3', {'class':'name'}).text
         post_url = 'https://jumia.com.ng'+ str(post.find('a').get('href'))
         post_price = post.find('a', {'class',"core"}).find('div', {'class':'info'}).find('div', {'class':'prc'}).text
-
-        final_postings.append((post_title, post_url, post_price))  
+        post_image = post.find('a', {'class',"core"}).find('div', {'class':'img-c'}).find('img').get('data-src')
+        
+        final_postings.append((post_title, post_url, post_price, post_image))  
     
     user_input = {
         "search": search,
