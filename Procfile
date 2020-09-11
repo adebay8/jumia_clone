@@ -1,0 +1,1 @@
+web: gunicorn jumia_Clone.wsgi
