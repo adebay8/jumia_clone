@@ -66,6 +66,27 @@ body{
     background-position: center;
 }
 
+.carousel-image-4{
+    background-image: linear-gradient(rgba(0,0,0,.3), rgba(0,0,0,.4)), url('images/image-4.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+.carousel-image-5{
+    background-image: linear-gradient(rgba(0,0,0,.3), rgba(0,0,0,.4)), url('images/image-5.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+.carousel-image-6{
+    background-image: linear-gradient(rgba(0,0,0,.3), rgba(0,0,0,.4)), url('images/image-61.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+}
+
 .title-color{
     color: white;
 }

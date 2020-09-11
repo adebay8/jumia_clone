@@ -20,14 +20,14 @@
     <!-- nav bar-->
         <nav class="navbar navbar-expand-sm navbar-dark bg-black">
             <div class="container-fluid">
-                <a href="#" class='navbar-brand'><strong>YOSS</strong></a>
+                <a href="{%url 'my_app:home'%}" class='navbar-brand'><strong>YOSS</strong></a>
                 <button class="navbar-toggler" data-toggle='collapse' data-target='#navbarCollapse'>
                     <span class='navbar-toggler-icon'></span>   
                 </button>
 
                 <div class="collapse navbar-collapse" id="navbarCollapse">
 
-                    <form class="form-inline my-2 my-sm-0 ml-auto" method="POST" action={% url 'my_app:new_search' %}>
+                    <form class="form-inline my-2 my-sm-0 ml-auto" method="POST" action="{% url 'my_app:new_search' %}#form">
                         {% csrf_token %}
                         <div class="input-group">
                             <input class="form-control" type="text" name="search" size='100'>
@@ -67,6 +67,9 @@
                     <li data-target="#Carousel" data-slide-to="0" class="active"></li>
                     <li data-target="#Carousel" data-slide-to="1"></li>
                     <li data-target="#Carousel" data-slide-to="2"></li>
+                    <li data-target="#Carousel" data-slide-to="3"></li>
+                    <li data-target="#Carousel" data-slide-to="4"></li>
+                    <li data-target="#Carousel" data-slide-to="5"></li>
                 </ol>
 
                 <div class="carousel-inner">
@@ -104,6 +107,39 @@
                         </div>
                     </div>
 
+                    <!-- fourth carousel-->
+                    <div class="carousel-item carousel-image-4">
+                        <div class="container">
+                            <div class="carousel-caption d-none d-sm-block mb-5">
+                                <h1 class="display-3 title-color">Title three</h1>
+                                <p class="lead">This is the paragraph of the slider blah blah</p>
+                                <a href="#" class="btn btn-color slide-btn btn-lg">Learn more</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- fifth carousel-->
+                    <div class="carousel-item carousel-image-5">
+                        <div class="container">
+                            <div class="carousel-caption d-none d-sm-block mb-5">
+                                <h1 class="display-3 title-color">Title three</h1>
+                                <p class="lead">This is the paragraph of the slider blah blah</p>
+                                <a href="#" class="btn btn-color slide-btn btn-lg">Learn more</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- sixth carousel-->
+                    <div class="carousel-item carousel-image-6">
+                        <div class="container">
+                            <div class="carousel-caption d-none d-sm-block mb-5">
+                                <h1 class="display-3 title-color">Title three</h1>
+                                <p class="lead">This is the paragraph of the slider blah blah</p>
+                                <a href="#" class="btn btn-color slide-btn btn-lg">Learn more</a>
+                            </div>
+                        </div>
+                    </div>
+
                     <a href="#Carousel" data-slide='prev' class='carousel-control-prev'>
                         <span class="carousel-control-prev-icon"></span>
                     </a>
@@ -119,7 +155,7 @@
     <!-- slider -->
         
     <!-- service section -->
-        <section class="services py-5 text-center">
+        <section id="services" class="services py-5 text-center">
             <div class="container">
                 <div class="row">
 
@@ -168,7 +204,7 @@
     <!-- service section -->
 
     <div class="container">
-        <form action="{% url 'my_app:new_search' %}" method="POST">
+        <form id="form" action="{% url 'my_app:new_search' %}#form" method="POST">
         {% csrf_token %}
         <div class="input-group mb-3">
             <input type="text" class="form-control mt-2" placeholder="Search" name="search">
