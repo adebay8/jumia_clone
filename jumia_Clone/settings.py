@@ -27,7 +27,7 @@ SECRET_KEY = 'w7s4t(^5=g&&bn4r=vi(1sp)m)99_f2y&qkmt3cvsogsv=y+wv'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['yoss-store.herokuapp.com']
 
 
 # Application definition
