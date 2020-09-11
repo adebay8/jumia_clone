@@ -46,21 +46,21 @@ body{
 }
 
 .carousel-image-1{
-    background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.4)), url('images/image-1.jpg');
+    background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.4)), url('images/image-11.jpg');
     background-size: cover;
     background-attachment: fixed;
     background-position: center;
 }
 
 .carousel-image-2{
-    background-image: linear-gradient(rgba(0,0,0,.3), rgba(0,0,0,.4)), url('images/image-2.jpg');
+    background-image: linear-gradient(rgba(0,0,0,.3), rgba(0,0,0,.4)), url('images/image-22.jpg');
     background-size: cover;
     background-attachment: fixed;
     background-position: center;
 }
 
 .carousel-image-3{
-    background-image: linear-gradient(rgba(0,0,0,.3), rgba(0,0,0,.4)), url('images/image-3.jpg');
+    background-image: linear-gradient(rgba(0,0,0,.3), rgba(0,0,0,.4)), url('images/image-33.jpg');
     background-size: cover;
     background-attachment: fixed;
     background-position: center;
@@ -74,7 +74,7 @@ body{
 }
 
 .carousel-image-5{
-    background-image: linear-gradient(rgba(0,0,0,.3), rgba(0,0,0,.4)), url('images/image-5.jpg');
+    background-image: linear-gradient(rgba(0,0,0,.3), rgba(0,0,0,.4)), url('images/image-55.jpg');
     background-size: cover;
     background-attachment: fixed;
     background-position: center;
