@@ -1,0 +1,92 @@
+{% load static %}
+{% load widget_tweaks %}
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/register.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet">
+
+    <title>YOSS | Online shopping for all products</title>
+  </head>
+  <body>
+
+    <section class="Form my-4 mx-5">
+        
+        <div class="container">
+            <div class="row no-gutters">
+                <div class="col-lg-5">
+                    <img class="img-fluid" src="https://content.asos-media.com/-/media/homepages/mw/2020/09/28/mw-moment-cta-870-x-1110--joggers-(1).jpg" alt="">
+                </div>
+
+                <div class="col-lg-7 px-5 pt-5">
+
+                    <h1 class="font-weight-bold py-3">YOSS</h1>
+
+                   <form action="" method="POST">
+                   {% csrf_token %}
+                        <div class="form-row">
+                            <div class="col-lg-7">
+                                {% render_field form.username class="form-control" placeholder=form.username.label %}
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="col-lg-7 mt-3">
+                                {% render_field form.email class="form-control" placeholder=form.email.label %}
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="col-lg-7 mt-3">
+                                {% render_field form.password1 class="form-control" placeholder=form.password1.label %}
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="col-lg-7 mt-3">
+                                {% render_field form.password2 class="form-control" placeholder=form.password2.label %}
+                            </div>
+                        </div>
+
+                            {% if form.errors%}
+                            <div>
+                                {{form.errors}}
+                            </div>
+                            {% endif %}
+
+                        <div class="form-row">
+                            <div class="col-lg-7">
+                                <input type="submit" class="btn1 mt-3 mb-4" name="Create User" value="Register Account">
+                            </div>
+                        </div>
+
+                        <p>Have an account? <a href="{% url 'login'%}">Login here</a></p>                       
+
+                   </form> 
+                </div>
+            </div>
+        </div>
+    
+    </section>
+
+
+        
+    
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"></script>
+  </body>
+</html>
