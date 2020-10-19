@@ -9,13 +9,13 @@
 
     {% for post in final_postings %}
 
-        <div class="col">
+        <div class="col-3">
             <div class="card mb-3">
                 <img src="{{ post.3 }}" class="card-image" alt="...">
                 <div class="card-body">
                     <h6 class="card-title" style="font-size:13px;">{{ post.0}}</h6>
                     <p class="card-text">{{ post.2 }}</p>
-                    <a href="{{ post.1 }}" target="_blank" class="btn btn-primary mb-5">View more</a>
+                    <a href="{% url 'my_app:productPage' post.4%}" class="btn btn-primary mb-5">View more</a>
                 </div>
             </div>
         </div>

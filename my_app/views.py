@@ -48,11 +48,13 @@ def index(request):
     return render(request, 'base.html')
 
 def new_search(request):
+    global search
     search = request.POST.get('search')
     models.Search.objects.create(search=search)
     num_pages = 2
 
     final_postings = []
+    i=0
 
     for pages in range(num_pages):
         pages += 1
@@ -64,6 +66,8 @@ def new_search(request):
         post_listings = soup.find_all('article', {'class': 'prd'})
 
         for post in post_listings:
+            post_id = i
+            i+=1
             post_title = post.find('a', {'class',"core"}).find('div', {'class':'info'}).find('h3', {'class':'name'}).text
             post_url = 'https://jumia.com.ng'+ str(post.find('a').get('href'))
             post_price = post.find('a', {'class',"core"}).find('div', {'class':'info'}).find('div', {'class':'prc'}).text
@@ -72,12 +76,22 @@ def new_search(request):
             if post_url == 'https://jumia.com.ngNone':
                 continue
             else:
-                final_postings.append((post_title, post_url, post_price, post_image))  
-    
+                final_postings.append((post_title, post_url, post_price, post_image, post_id))  
+    global user_input
+
     user_input = {
         "search": search,
         'final_postings': final_postings,
     }
 
-
     return render(request, 'my_app/new_search.html', user_input)
+
+def productPage(request, product_id):
+    for post in user_input['final_postings']:
+        if post[4] == product_id:
+            product_details = {
+                "search": search,
+                'final_postings':[post],
+            }
+        
+    return render(request, 'products/product.html', product_details)

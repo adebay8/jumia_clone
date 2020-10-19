@@ -18,70 +18,12 @@
     <title>YOSS | Online shopping for all products</title>
   </head>
   <body>
-    <!-- nav bar-->
-        <nav class="navbar navbar-expand-sm navbar-dark bg-black">
-            <div class="container-fluid">
-                <a href="{%url 'my_app:home'%}" class='navbar-brand'><strong>YOSS</strong></a>
-                <button class="navbar-toggler" data-toggle='collapse' data-target='#navbarCollapse'>
-                    <span class='navbar-toggler-icon'></span>   
-                </button>
+    
+    <!-- navbar -->
+    {% include "navbar.html" %}
+    <!-- end of navbar -->
 
-                <div class="collapse navbar-collapse" id="navbarCollapse">
-
-                    <form class="form-inline my-2 my-sm-0 ml-auto" method="POST" action="{% url 'my_app:new_search' %}#form">
-                        {% csrf_token %}
-                        <div class="input-group">
-                            <input class="form-control" type="text" name="search" size='100'>
-                            <button type="submit" class='ponne-buttin'><i class="fas fa-search"></i></button>
-                        </div>
-                    </form>
-
-                    <ul class="navbar-nav ml-auto">
-
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <i class="fas fa-user fa-2x"></i>
-                            </a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdown1">
-
-                                {% if not request.user.is_authenticated%}
-                                    <a class="dropdown-item" href="{% url 'login'%}">Sign In</a> 
-                                    <a class="dropdown-item" href="{% url 'login'%}">My Account</a>
-                                    <a class="dropdown-item" href="#">My Orders</a>
-                                    <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="{%url 'login'%}">Login</a>
-                                {% else %}
-                                    <span class="dropdown-item">Hello, <strong>{{ request.user}}</strong></span>
-                                    <a class="dropdown-item" href="{% url 'accounts:accounts'%}">My Account</a>
-                                    <a class="dropdown-item" href="#">My Orders</a>
-                                    <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="{%url 'logout'%}">Logout</a>
-                                {% endif %}
-
-                            </div>
-                        </li>
-
-                        <li class="nav-item">
-                            <a href="#" class='nav-link' style='color:white; opacity: 60%;'><i class="far fa-heart fa-2x"></i></a>
-                        </li>
-
-                        <li class="nav-item active">
-                            <a href="#" class='nav-link' style='opacity: 60%;'><i class="far fa-question-circle fa-2x"></i></a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a href="#" class='nav-link' style='color:white; opacity: 60%;'><i class="fas fa-cart-plus fa-2x"></i></a>
-                        </li>
-                    </ul>
-
-                </div>
-            </div>
-        </nav>
-    <!-- nav bar-->
-
-
-    <!-- slider -->
-        
+    <!-- slider -->  
         <section id='main'>
             <div id="Carousel" class="carousel" data-ride='carousel'>
                 <ol class="carousel-indicators">
@@ -175,8 +117,6 @@
                     </a>
                 </div>
             </div>
-
-
         </section>
     <!-- slider -->
         
@@ -248,143 +188,9 @@
         
     <!-- search results -->
     
-    
-    <!-- Footer -->
-    <footer class="page-footer font-small bg-black pt-4">
-
-        <!-- Footer Links -->
-        <div class="container text-center text-md-left">
-    
-        <!-- Footer links -->
-        <div class="row text-center text-md-left mt-3 pb-3">
-    
-            <!-- Grid column -->
-            <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
-            <h6 class="text-uppercase mb-4 font-weight-bold">YOSS</h6>
-            <p>Here you can use rows and columns to organize your footer content. Lorem ipsum dolor sit amet,
-                consectetur
-                adipisicing elit.</p>
-            </div>
-            <!-- Grid column -->
-    
-            <hr class="w-100 clearfix d-md-none">
-    
-            <!-- Grid column -->
-            <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
-            <h6 class="text-uppercase mb-4 font-weight-bold">About us</h6>
-            <p>
-                <a href="#!">About us</a>
-            </p>
-            <p>
-                <a href="#!">YOSS careers</a>
-            </p>
-            <p>
-                <a href="#!">Privacy policy</a>
-            </p>
-            <p>
-                <a href="#!">Terms and Conditions</a>
-            </p>
-            </div>
-            <!-- Grid column -->
-    
-            <hr class="w-100 clearfix d-md-none">
-    
-            <!-- Grid column -->
-            <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
-            <h6 class="text-uppercase mb-4 font-weight-bold">Useful links</h6>
-            <p>
-                <a href="#!">Your Account</a>
-            </p>
-            <p>
-                <a href="#!">Become an Affiliate</a>
-            </p>
-            <p>
-                <a href="#!">Shipping Rates</a>
-            </p>
-            <p>
-                <a href="#!">Help</a>
-            </p>
-            </div>
-    
-            <!-- Grid column -->
-            <hr class="w-100 clearfix d-md-none">
-    
-            <!-- Grid column -->
-            <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
-            <h6 class="text-uppercase mb-4 font-weight-bold">Contact</h6>
-            <p>
-                <i class="fas fa-home mr-3"></i> New York, NY 10012, US</p>
-            <p>
-                <i class="fas fa-envelope mr-3"></i> info@gmail.com</p>
-            <p>
-                <i class="fas fa-phone mr-3"></i> + 01 234 567 88</p>
-            <p>
-                <i class="fas fa-print mr-3"></i> + 01 234 567 89</p>
-            </div>
-            <!-- Grid column -->
-    
-        </div>
-        <!-- Footer links -->
-    
-        <hr>
-    
-        <!-- Grid row -->
-        <div class="row d-flex align-items-center">
-    
-            <!-- Grid column -->
-            <div class="col-md-7 col-lg-8">
-    
-            <!--Copyright-->
-            <p class="text-center text-md-left">© 2020 Copyright:
-                <a href="https://mdbootstrap.com/">
-                <strong>YOSS</strong>
-                </a>
-            </p>
-    
-            </div>
-            <!-- Grid column -->
-    
-            <!-- Grid column -->
-            <div class="col-md-5 col-lg-4 ml-lg-0">
-    
-            <!-- Social buttons -->
-            <div class="text-center text-md-right">
-                <ul class="list-unstyled list-inline">
-                <li class="list-inline-item">
-                    <a class="btn-floating btn-sm rgba-white-slight mx-1">
-                    <i class="fab fa-facebook-f"></i>
-                    </a>
-                </li>
-                <li class="list-inline-item">
-                    <a class="btn-floating btn-sm rgba-white-slight mx-1">
-                    <i class="fab fa-twitter"></i>
-                    </a>
-                </li>
-                <li class="list-inline-item">
-                    <a class="btn-floating btn-sm rgba-white-slight mx-1">
-                    <i class="fab fa-google-plus-g"></i>
-                    </a>
-                </li>
-                <li class="list-inline-item">
-                    <a class="btn-floating btn-sm rgba-white-slight mx-1">
-                    <i class="fab fa-linkedin-in"></i>
-                    </a>
-                </li>
-                </ul>
-            </div>
-    
-            </div>
-            <!-- Grid column -->
-    
-        </div>
-        <!-- Grid row -->
-    
-        </div>
-        <!-- Footer Links -->
-    
-    </footer>
-    <!-- Footer -->
-    
+    <!-- footer -->
+    {% include "footer.html" %}
+    <!-- end of footer -->
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
