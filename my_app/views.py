@@ -89,6 +89,7 @@ def new_search(request):
 def productPage(request, product_id):
     for post in user_input['final_postings']:
         if post[4] == product_id:
+
             product_details = {
                 "search": search,
                 'final_postings':[post],

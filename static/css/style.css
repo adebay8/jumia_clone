@@ -102,12 +102,12 @@ body{
 
 .btn-color{
     background: black;
-    color: white;
+    color: white!important;
 }
 
 .btn-color:hover{
-    color: black;
-    background: white;
+    color: black!important;
+    background: #fab546;
 }
 
 @keyframes slide-btn{
